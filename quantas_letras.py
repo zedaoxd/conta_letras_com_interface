@@ -1,5 +1,4 @@
 from tkinter import *
-from tkinter import messagebox
 
 
 def conta_string(texto):
@@ -10,7 +9,9 @@ def conta_string(texto):
             ja_foi.append(letra)
             contadas[letra] = texto.count(letra)
     contadas.pop('\n')
-    messagebox.showinfo(title='Strings Contadas', message=contadas)
+    texto_resposta['text'] = ''
+    for i, v in contadas.items():
+        texto_resposta['text'] += f'Letra: {i}, Vezes: {v}\n'
 
 
 def segura_ai():
@@ -19,7 +20,7 @@ def segura_ai():
 
 
 janela = Tk()
-janela.geometry('250x250')
+janela.geometry('220x550')
 janela.configure(background='#dde')
 janela.title('Quantas Letras')
 
@@ -32,6 +33,9 @@ texto.place(x=10, y=30, width=200, height=100)
 
 botao = Button(janela, text='Contar agora', command=segura_ai)
 botao.place(x=35, y=145, width=150, height=50)
+
+texto_resposta = Label(janela, text='Esperando clique no botão')
+texto_resposta.place(x=10, y=220, width=200, height=300)
 
 
 janela.mainloop()
