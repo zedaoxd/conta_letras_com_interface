@@ -30,7 +30,6 @@ mensagem_inicial.place(x=60, y=10, width=100, height=20)
 texto = Text(janela)
 texto.place(x=10, y=30, width=200, height=100)
 
-
 botao = Button(janela, text='Contar agora', command=segura_ai)
 botao.place(x=35, y=145, width=150, height=50)
 
